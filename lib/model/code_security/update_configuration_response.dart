@@ -1,0 +1,74 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:meta/meta.dart';
+import 'package:github/model_helpers.dart';
+import 'package:github/model/code_security/update_configuration_response.dart';
+import 'package:github/model/code-security-configuration.dart';
+import 'package:github/model/code-security-configuration_target_type.dart';
+import 'package:github/model/code-security-configuration_advanced_security.dart';
+import 'package:github/model/code-security-configuration_dependency_graph.dart';
+import 'package:github/model/code-security-configuration_dependency_graph_autosubmit_action.dart';
+import 'package:github/model/code-security-configuration_dependency_graph_autosubmit_action_options.dart';
+import 'package:github/model/code-security-configuration_dependabot_alerts.dart';
+import 'package:github/model/code-security-configuration_dependabot_security_updates.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup_options.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup_options_runner_type.dart';
+import 'package:github/model/code-security-configuration_code_scanning_delegated_alert_dismissal.dart';
+import 'package:github/model/code-security-configuration_secret_scanning.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_push_protection.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options_reviewers_inner.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options_reviewers_inner_reviewer_type.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_validity_checks.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_non_provider_patterns.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_generic_secrets.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_alert_dismissal.dart';
+import 'package:github/model/code-security-configuration_private_vulnerability_reporting.dart';
+import 'package:github/model/code-security-configuration_enforcement.dart';
+import 'package:github/model/code_security/update_configuration_response.dart';
+import 'package:github/model/code-security-configuration.dart';
+import 'package:github/model/code-security-configuration_target_type.dart';
+import 'package:github/model/code-security-configuration_advanced_security.dart';
+import 'package:github/model/code-security-configuration_dependency_graph.dart';
+import 'package:github/model/code-security-configuration_dependency_graph_autosubmit_action.dart';
+import 'package:github/model/code-security-configuration_dependency_graph_autosubmit_action_options.dart';
+import 'package:github/model/code-security-configuration_dependabot_alerts.dart';
+import 'package:github/model/code-security-configuration_dependabot_security_updates.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup_options.dart';
+import 'package:github/model/code-security-configuration_code_scanning_default_setup_options_runner_type.dart';
+import 'package:github/model/code-security-configuration_code_scanning_delegated_alert_dismissal.dart';
+import 'package:github/model/code-security-configuration_secret_scanning.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_push_protection.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options_reviewers_inner.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_bypass_options_reviewers_inner_reviewer_type.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_validity_checks.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_non_provider_patterns.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_generic_secrets.dart';
+import 'package:github/model/code-security-configuration_secret_scanning_delegated_alert_dismissal.dart';
+import 'package:github/model/code-security-configuration_private_vulnerability_reporting.dart';
+import 'package:github/model/code-security-configuration_enforcement.dart';
+
+sealed class CodeSecurity&#x2F;updateConfigurationResponse {
+    static CodeSecurity&#x2F;updateConfigurationResponse fromJson(dynamic jsonArg) {
+        // Determine which schema to use based on the json.
+        // TODO(eseidel): Implement this.
+        throw UnimplementedError('CodeSecurity&#x2F;updateConfigurationResponse.fromJson');
+    }
+
+    /// Convenience to create a nullable type from a nullable json object.
+    /// Useful when parsing optional fields.
+    static CodeSecurity&#x2F;updateConfigurationResponse? maybeFromJson(dynamic json) {
+        if (json == null) {
+            return null;
+        }
+        return CodeSecurity&#x2F;updateConfigurationResponse.fromJson(json);
+    }
+
+    /// Require all subclasses to implement toJson.
+    dynamic toJson();
+}

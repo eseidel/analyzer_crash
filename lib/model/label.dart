@@ -1,0 +1,82 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:meta/meta.dart';
+import 'package:github/model_helpers.dart';
+import 'package:github/model/label.dart';
+import 'package:github/model/label.dart';
+@immutable
+class Label {
+    Label(
+        { required this.id,required this.node_id,required this.url,required this.name,required this.description,required this.color,required this.default,
+         }
+    );
+
+    factory Label.fromJson(Map<String, dynamic>
+        json) {
+        return Label(
+            id: (json['id'] as int).toInt() ,
+            node_id: json['node_id'] as String ,
+            url: json['url'] as String ,
+            name: json['name'] as String ,
+            description: json['description'] as String ,
+            color: json['color'] as String ,
+            default: (json['default'] as bool) ,
+        );
+    }
+
+    /// Convenience to create a nullable type from a nullable json object.
+    /// Useful when parsing optional fields.
+    static Label? maybeFromJson(Map<String, dynamic>? json) {
+        if (json == null) {
+            return null;
+        }
+        return Label.fromJson(json);
+    }
+
+    final int  id;
+    final String  node_id;
+    final String  url;
+    final String  name;
+    final String  description;
+    final String  color;
+    final bool  default;
+
+
+    Map<String, dynamic> toJson() {
+        return {
+            'id': id,
+            'node_id': node_id,
+            'url': url,
+            'name': name,
+            'description': description,
+            'color': color,
+            'default': default,
+        };
+    }
+
+    @override
+    int get hashCode =>
+        Object.hash(
+          id,
+          node_id,
+          url,
+          name,
+          description,
+          color,
+          default,
+        );
+
+    @override
+    bool operator ==(Object other) {
+        if (identical(this, other)) return true;
+        return other is Label
+            && id == other.id
+            && node_id == other.node_id
+            && url == other.url
+            && name == other.name
+            && description == other.description
+            && color == other.color
+            && default == other.default
+        ;
+    }
+}
