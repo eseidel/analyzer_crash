@@ -1,5 +1,7 @@
 # Crashing bug in Dart Analyzer
 
+Filed as https://github.com/dart-lang/sdk/issues/60977
+
 Currently using ```
 Dart SDK version: 3.8.1 (stable) (Wed May 28 00:47:25 2025 -0700) on "macos_arm64"
 ```
